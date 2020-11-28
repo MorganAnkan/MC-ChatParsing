@@ -1,3 +1,5 @@
+const translations = require("./translations.json");
+
 function processMsg(data) {
     if (typeof data.text == "undefined" && typeof data.translate !== "undefined" && !(typeof data == "string")) {
         let msg = "";
