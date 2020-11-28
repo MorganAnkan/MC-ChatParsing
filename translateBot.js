@@ -13,5 +13,7 @@ bot.on("login", () => {
 });
 
 bot.on("chat", (msgData, packetInfo) => {
-  console.log(chat_parser.toAnsi(chat_parser.processMsg(JSON.parse(msgData.message))));
+  const parsedM = chat_parser.processMsg(JSON.parse(msgData.message));
+  console.log(chat_parser.toAnsi(parsedM));
+  // use chat_parser.cleanup(parsedM); //for message with no color codes.
 });
