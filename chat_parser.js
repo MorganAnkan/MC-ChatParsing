@@ -125,7 +125,7 @@ function toAnsi(message) {
     Object.keys(ansicolors).forEach(c => {
         message = message.replace(new RegExp(c, "g"), ansicolors[c]);
     });
-    return message;
+    return message+"\x1b[0m";
 }
 
 function cleanup(message) {
