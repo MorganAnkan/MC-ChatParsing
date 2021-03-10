@@ -28,7 +28,7 @@ function processMsg(data) {
         let strikethrough = data.strikethrough == true ? "§m" : "";
 
 
-        for (let i = 0; i < (translate.match(/%s/g) || []).length + 1; i++) {
+        for (let i = 0; i <= (translate.match(/%s/g) || []).length + 1; i++) {
             let replace = typeof withdata[i] !== "undefined" ? withdata[i] : "";
             translate = translate.replace("%s", replace + color + bold + obfuscated + underlined + italic + strikethrough);
         }
